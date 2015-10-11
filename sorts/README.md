@@ -1,5 +1,5 @@
 # Sorts
-|                               | Time                             | Memory                               |                     |
+
 |                               | Time best case | Time worst case | Memory best case | Memory worst case | Stable? | In place? |
 |-------------------------------|----------------|-----------------|------------------|-------------------|---------|-----------|
 |[Merge sort](./merge_sort.rb)  | `O(nlog(n))`   | `O(nlog(n))`    | `O(n)`           | `O(n)`            | Yes     | No        |
