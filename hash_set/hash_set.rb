@@ -51,6 +51,12 @@ end
 # Possible `#hash` implementations
 # Note `^` is the bitwise XOR (exclusive OR) operator
 
+class Integer
+  def hash
+    self
+  end
+end
+
 class Array
   def hash
     result = 0
