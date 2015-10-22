@@ -1,4 +1,4 @@
-# `HashSet`(./hash_set.rb)
+# [`HashSet`](./hash_set.rb)
 
 ## Time complexity of operations
 
