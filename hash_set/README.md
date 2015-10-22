@@ -1,4 +1,4 @@
-# Simple `HashSet` supporting integer elements
+# [Simple `HashSet` supporting integer elements](./hash_set.rb)
 
 ## Time complexity of operations
 
