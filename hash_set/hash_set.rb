@@ -1,5 +1,3 @@
-# Simple implementation supporting integer elements
-
 class HashSet
   def initialize
     @buckets = Array.new(8) { [] }
@@ -35,8 +33,7 @@ class HashSet
   private
 
   def bucket_for_el(el)
-    raise "Only integer elements permitted" unless el.is_a?(Integer)
-    @buckets[el % @buckets.length]
+    @buckets[el.hash % @buckets.length]
   end
 
   def resize!
@@ -48,5 +45,30 @@ class HashSet
     old_buckets.each do |bucket|
       bucket.each { |el| insert(el) }
     end
+  end
+end
+
+# Possible `#hash` implementations
+# Note `^` is the bitwise XOR (exclusive OR) operator
+
+class Array
+  def hash
+    result = 0
+    each { |el| result ^= el.hash }
+    result
+  end
+end
+
+class String
+  def hash
+    result = 0
+    each_char { |char| result ^= char.ord.hash }
+    result
+  end
+end
+
+class Hash
+  def hash
+    to_a.hash
   end
 end
